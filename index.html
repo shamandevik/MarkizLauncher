@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markiz Launcher — лаунчер Minecraft</title>
+<meta name="description" content="Markiz Launcher — открытый лаунчер Minecraft: сборки, каталог модов Modrinth, скины, друзья и свой сервер. Бесплатно, GPL-3.0.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Markiz Launcher">
+<meta property="og:description" content="Лаунчер Minecraft с модами, скинами и друзьями. Открытый код, GPL-3.0.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  ВАЖНО: замените TELEGRAM_CHANNEL на username вашего канала (например, markiz_launcher).
+  Ссылка на канал используется во всех местах ниже (data-telegram-link).
+-->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Markiz Launcher — наверх">
+      <img src="assets/logo.png" alt="" width="22" height="22">
+      <span>Markiz</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
+      <a href="#features">Возможности</a>
+      <a href="#install">Установка</a>
+      <a href="#security">Безопасность</a>
+      <a href="#faq">Вопросы</a>
+      <a href="https://t.me/MarkizLauncher" target="_blank" rel="noopener" data-telegram-link>Telegram</a>
+      <a href="https://github.com/shamandevik/MarkizLauncher" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+
+    <div class="nav-right">
+      <a class="nav-cta" href="#install">Скачать</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="kicker reveal">Открытый лаунчер Minecraft</p>
+      <h1 class="reveal">Markiz.<br><span class="accent">Всё для игры</span> в одном окне.</h1>
+      <p class="hero-lead reveal">Сборки, моды из Modrinth, скины, друзья и свой сервер. Java ставится сама, вход в Microsoft — только на сайте Microsoft.</p>
+      <div class="hero-cta reveal">
+        <a class="pill pill-accent" href="https://github.com/shamandevik/MarkizLauncher/releases/download/1.0/markiz-launcher-windows.exe">Скачать для Windows</a>
+        <a class="pill pill-link" href="#install">Другие платформы <span aria-hidden="true">›</span></a>
+      </div>
+      <p class="hero-meta reveal">Версия 1.0 · ≈ 87 МБ · Windows 10/11 и Linux · Бесплатно</p>
+
+      <div class="hero-art reveal">
+        <img src="assets/hero.png" alt="Персонаж Markiz Launcher" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES: плитки во всю ширину -->
+  <section class="section" id="features">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2>Один лаунчер вместо десяти вкладок.</h2>
+        <p>Всё, что обычно собирают по форумам и дискордам, — от установки версии до поиска компании на вечер.</p>
+      </header>
+
+      <div class="tiles">
+        <article class="tile tile-wide reveal">
+          <div class="tile-text">
+            <h3>Сборки в один клик.</h3>
+            <p>Выберите версию и загрузчик, добавьте моды. Лаунчер разложит файлы, выставит память и подберёт аргументы запуска.</p>
+            <ul class="chips" aria-label="Загрузчики">
+              <li>Fabric</li><li>Forge</li><li>NeoForge</li><li>Quilt</li><li>Ванилла</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile-text">
+            <h3>Каталог модов.</h3>
+            <p>Поиск по Modrinth прямо в лаунчере: описание, версии, зависимости. Без браузера и ручной распаковки.</p>
+          </div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile-text">
+            <h3>Гардероб.</h3>
+            <p>Скины и плащи с 3D-предпросмотром. Меняйте внешний вид, не выходя из лаунчера.</p>
+          </div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile-text">
+            <h3>Друзья и чат.</h3>
+            <p>Статус «в игре», личные сообщения и общий чат. Видно, кто на каком сервере.</p>
+          </div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile-text">
+            <h3>Свой сервер.</h3>
+            <p>Панель хостинга внутри лаунчера: запуск, настройки и моды без консоли и SSH.</p>
+          </div>
+        </article>
+
+        <article class="tile tile-wide reveal">
+          <div class="tile-text">
+            <h3>Ничего не нужно доустанавливать.</h3>
+            <p>Java скачивается под выбранную сборку, лаунчер обновляется сам и проверяет целостность файлов игры.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERFACE -->
+  <section class="section section-dark" id="interface">
+    <div class="container">
+      <header class="section-head center reveal">
+        <h2>Тёмное окно. Знакомые кнопки.</h2>
+        <p>Экраны на React, ядро на Rust. Окно открывается быстро, и всё нужное — на первом экране.</p>
+      </header>
+
+      <div class="window reveal" aria-hidden="true">
+        <div class="window-bar">
+          <span class="window-dots"><i></i><i></i><i></i></span>
+          <span class="window-title">Markiz Launcher</span>
+        </div>
+        <div class="window-body">
+          <aside class="window-side">
+            <span class="w-ava"></span>
+            <span class="w-line w70"></span>
+            <span class="w-line w50"></span>
+            <span class="w-line w60"></span>
+            <span class="w-line w40"></span>
+          </aside>
+          <div class="window-main">
+            <div class="w-hero">
+              <span class="w-tag"></span>
+              <span class="w-h"></span>
+              <span class="w-h short"></span>
+              <span class="w-btn"></span>
+            </div>
+            <div class="w-tiles"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="ticks reveal">
+        <li>Лобби с быстрым запуском последней сборки</li>
+        <li>«Мои сборки» и «Каталог» рядом</li>
+        <li>Память и аргументы — без редактирования json</li>
+        <li>21 язык интерфейса, включая RTL</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INSTALL -->
+  <section class="section" id="install">
+    <div class="container">
+      <header class="section-head center reveal">
+        <h2>Установка за минуту.</h2>
+        <p>Скачайте сборку из релизов. Обновления лаунчер ставит сам.</p>
+      </header>
+
+      <div class="segmented reveal" role="tablist" aria-label="Платформа">
+        <button class="seg is-active" role="tab" aria-selected="true" aria-controls="panel-win" id="tab-win" data-tab="win">Windows</button>
+        <button class="seg" role="tab" aria-selected="false" aria-controls="panel-linux" id="tab-linux" data-tab="linux">Linux</button>
+      </div>
+
+      <div class="install-panel reveal">
+        <div class="tab-panel is-active" id="panel-win" role="tabpanel" aria-labelledby="tab-win">
+          <ol class="steps">
+            <li>
+              <span class="step-n">1</span>
+              <div>
+                <h4>Скачайте установщик</h4>
+                <p><code>markiz-launcher-windows.exe</code>, около 87 МБ.</p>
+                <a class="pill pill-accent pill-sm" href="https://github.com/shamandevik/MarkizLauncher/releases/download/1.0/markiz-launcher-windows.exe">Скачать .exe</a>
+              </div>
+            </li>
+            <li>
+              <span class="step-n">2</span>
+              <div>
+                <h4>Запустите файл</h4>
+                <p>Если Windows покажет «Защитила ваш компьютер», нажмите <b>«Подробнее»</b> → <b>«Выполнить в любом случае»</b>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-n">3</span>
+              <div>
+                <h4>Войдите и играйте</h4>
+                <p>По нику или через окно Microsoft. Пароль вводится только на сайте Microsoft.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="tab-panel" id="panel-linux" role="tabpanel" aria-labelledby="tab-linux" hidden>
+          <ol class="steps">
+            <li>
+              <span class="step-n">1</span>
+              <div>
+                <h4>Скачайте сборку</h4>
+                <p><code>markiz-launcher-linux</code> из того же релиза.</p>
+                <a class="pill pill-accent pill-sm" href="https://github.com/shamandevik/MarkizLauncher/releases/download/1.0/markiz-launcher-linux">Скачать для Linux</a>
+              </div>
+            </li>
+            <li>
+              <span class="step-n">2</span>
+              <div>
+                <h4>Сделайте исполняемым и запустите</h4>
+                <div class="code">
+                  <pre><code>chmod +x markiz-launcher-linux
+./markiz-launcher-linux</code></pre>
+                  <button class="copy" type="button" aria-label="Скопировать команды">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="step-n">3</span>
+              <div>
+                <h4>Или соберите сами</h4>
+                <p>Нужны Rust, Node и Bun. Инструкция в <a href="https://github.com/shamandevik/MarkizLauncher/blob/main/BUILDING.ru.md" target="_blank" rel="noopener">BUILDING.ru.md</a>.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <dl class="specs reveal">
+        <div><dt>Система</dt><dd>Windows 10/11, Linux x64</dd></div>
+        <div><dt>Java</dt><dd>Не нужна, скачается сама</dd></div>
+        <div><dt>Аккаунт</dt><dd>Microsoft или ник</dd></div>
+        <div><dt>Цена</dt><dd>Бесплатно, без рекламы</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- TELEGRAM -->
+  <section class="section section-dark" id="telegram">
+    <div class="container">
+      <div class="tg-card reveal">
+        <div class="tg-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M9.04 15.27 8.9 19.2c.42 0 .6-.18.83-.4l1.99-1.9 4.12 3.02c.76.42 1.3.2 1.5-.7l2.72-12.76c.27-1.1-.4-1.6-1.13-1.32L3.2 10.3c-1.07.42-1.05 1.02-.18 1.3l4.3 1.34 9.98-6.3c.47-.3.9-.13.55.18L9.04 15.27Z"/></svg>
+        </div>
+        <h2>Новости и обновления в Telegram.</h2>
+        <p>Релизы, исправления, новые сборки и ответы на вопросы — первыми в канале.</p>
+        <a class="pill pill-accent pill-lg" href="https://t.me/MarkizLauncher" target="_blank" rel="noopener" data-telegram-link>Подписаться на канал</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="section" id="security">
+    <div class="container">
+      <header class="section-head center reveal">
+        <h2>Почему этому можно доверять.</h2>
+        <p>Единственный честный ответ на «что он делает с моим аккаунтом» — дать прочитать код целиком.</p>
+      </header>
+
+      <div class="tiles tiles-2">
+        <article class="tile reveal">
+          <span class="tile-num">01</span>
+          <h3>Код открыт.</h3>
+          <p>Вся логика — на GitHub под GPL-3.0. Сверьте любую строку и соберите свою версию.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-num">02</span>
+          <h3>Пароль не виден.</h3>
+          <p>Вход идёт через официальное окно Microsoft. Лаунчер получает токен, а не пароль.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-num">03</span>
+          <h3>Только официальные сборки.</h3>
+          <p>Качайте файлы из Releases этого репозитория. Пересборки с файлообменников никто не проверял.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-num">04</span>
+          <h3>Ядро на Rust.</h3>
+          <p>Tauri 2 вместо Electron: меньше памяти и меньше поверхности для атаки.</p>
+        </article>
+      </div>
+
+      <p class="stack reveal">Tauri 2 · Rust · React 19 · TypeScript · Vite · Modrinth API · GPL-3.0</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-dark" id="faq">
+    <div class="container narrow">
+      <header class="section-head center reveal">
+        <h2>Вопросы.</h2>
+      </header>
+
+      <div class="faq reveal">
+        <details class="qa" open>
+          <summary>Это бесплатно?</summary>
+          <div class="qa-body"><p>Да. Без рекламы и постороннего софта в установщике.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Нужен купленный Minecraft?</summary>
+          <div class="qa-body"><p>Нет, можно играть по нику. С лицензией — вход через окно Microsoft, пароль лаунчер не видит.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Java ставить нужно?</summary>
+          <div class="qa-body"><p>Нет, лаунчер скачает подходящую версию сам — отдельно для каждой сборки.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Антивирус ругается — что делать?</summary>
+          <div class="qa-body"><p>Скачивайте только из <a href="https://github.com/shamandevik/MarkizLauncher/releases" target="_blank" rel="noopener">Releases</a> этого репозитория. Проверьте файл на VirusTotal и сравните хеш с релизом.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Что-то не работает?</summary>
+          <div class="qa-body"><p>Заведите issue в репозитории и приложите <code>logs/launcher-latest.log</code> из папки сборки.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Это тот же Millida Launcher?</summary>
+          <div class="qa-body"><p>Markiz — форк Millida Launcher: тот же движок, своё имя и свои иконки. Исходный проект под GPL-3.0, форк легален, бренд и сервисы оригинала под лицензию не попадают.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section final">
+    <div class="container center">
+      <h2 class="reveal">Скачайте. Заходите. Играйте.</h2>
+      <div class="hero-cta reveal">
+        <a class="pill pill-accent pill-lg" href="https://github.com/shamandevik/MarkizLauncher/releases/download/1.0/markiz-launcher-windows.exe">Скачать для Windows</a>
+        <a class="pill pill-link pill-lg" href="https://github.com/shamandevik/MarkizLauncher/releases/download/1.0/markiz-launcher-linux">Для Linux <span aria-hidden="true">›</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-cols">
+        <div>
+          <h4>Проект</h4>
+          <a href="https://github.com/shamandevik/MarkizLauncher" target="_blank" rel="noopener">Репозиторий</a>
+          <a href="https://github.com/shamandevik/MarkizLauncher/releases" target="_blank" rel="noopener">Релизы</a>
+          <a href="https://github.com/shamandevik/MarkizLauncher/blob/main/BUILDING.ru.md" target="_blank" rel="noopener">Сборка</a>
+          <a href="https://github.com/shamandevik/MarkizLauncher/blob/main/LICENSE" target="_blank" rel="noopener">Лицензия</a>
+        </div>
+        <div>
+          <h4>Документы</h4>
+          <a href="https://github.com/shamandevik/MarkizLauncher/blob/main/ARCHITECTURE.ru.md" target="_blank" rel="noopener">Устройство</a>
+          <a href="https://github.com/shamandevik/MarkizLauncher/blob/main/SECURITY.ru.md" target="_blank" rel="noopener">Безопасность</a>
+          <a href="https://github.com/shamandevik/MarkizLauncher/blob/main/TELEMETRY.ru.md" target="_blank" rel="noopener">Телеметрия</a>
+          <a href="https://github.com/shamandevik/MarkizLauncher/blob/main/TRADEMARK.ru.md" target="_blank" rel="noopener">Бренд</a>
+        </div>
+        <div>
+          <h4>Сообщество</h4>
+          <a href="https://t.me/MarkizLauncher" target="_blank" rel="noopener" data-telegram-link>Telegram-канал</a>
+          <a href="https://github.com/shamandevik/MarkizLauncher/issues" target="_blank" rel="noopener">Issues</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Markiz Launcher · Открытый код · GPL-3.0-only</p>
+      <p>© <span id="year">2026</span>. Не связан с Mojang и Microsoft. Minecraft — торговая марка Mojang Studios.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
